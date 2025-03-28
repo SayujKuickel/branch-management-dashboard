@@ -9,6 +9,8 @@ Install Xampp
 First, run Xampp and start Apache and MySQL server:
 Open [http://localhost/phpmyadmin](http://localhost/phpmyadmin) with your browser and create a database named `branch_management_system`.
 
+Use the provided sql dump file to add default data if needed.
+
 ---
 
 Create a `.env` file with the following values
@@ -31,4 +33,8 @@ pnpm start
 bun start
 ```
 
-Open [http://localhost:3100](http://localhost:3100) with your browser to see the result.
+Open [http://localhost:3100](http://localhost:3100) to access the API.
+
+---
+
+## Go to [Frontend Instructions](https://github.com/SayujKuickel/manage-branch/blob/main/frontend/README.md).

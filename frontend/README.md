@@ -2,7 +2,8 @@
 
 ### Prerequisites
 
-If you haven't yet followed the backend instructions. Go to backend and do it.
+If you haven't yet followed the backend instructions. Go to
+[Backend Instructions](https://github.com/SayujKuickel/manage-branch/blob/main/backend/README.md).
 
 ## Getting Started
 
