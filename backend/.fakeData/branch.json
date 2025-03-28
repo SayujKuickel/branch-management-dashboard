@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Kathmandu",
+    "location": "15 Durbar Marg"
+  },
+  {
+    "name": "Bhaktapur",
+    "location": "22 Taumadi Square"
+  },
+  {
+    "name": "Lalitpur",
+    "location": "53 Patan Durbar"
+  },
+  {
+    "name": "Pokhara",
+    "location": "17 Lakeside Street"
+  },
+  {
+    "name": "Biratnagar",
+    "location": "88 Main Road"
+  },
+  {
+    "name": "Chitwan",
+    "location": "102 Bharatpur Center"
+  },
+  {
+    "name": "Butwal",
+    "location": "33 Siddhartha Path"
+  },
+  {
+    "name": "Janakpur",
+    "location": "77 Ram Mandir Marg"
+  },
+  {
+    "name": "Dharan",
+    "location": "45 Ghopa Camp"
+  },
+  {
+    "name": "Birgunj",
+    "location": "63 Adarsha Nagar"
+  }
+]

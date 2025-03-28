@@ -1,0 +1,22 @@
+
+GET http://127.0.0.1:3100/api/v1/misc/stats
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3NDI0ODg4ODl9.SjC9PzGrEduXEKhWaK-q6h7b_cnSSDeg4UJ2rZPaRwA
+
+
+###
+GET http://127.0.0.1:3100/api/v1/students?page=5
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3NDI0ODg4ODl9.SjC9PzGrEduXEKhWaK-q6h7b_cnSSDeg4UJ2rZPaRwA
+
+
+###
+GET http://127.0.0.1:3100/api/v1/branch?limit=10
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3NDI0ODg4ODl9.SjC9PzGrEduXEKhWaK-q6h7b_cnSSDeg4UJ2rZPaRwA
+
+### 
+POST http://127.0.0.1:3100/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin" 
+}
