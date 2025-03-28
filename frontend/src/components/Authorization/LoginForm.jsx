@@ -55,6 +55,13 @@ const LoginForm = ({}) => {
     }
   }
 
+  // useEffect(() => {
+  //   const token = sessionStorage.getItem("access-token");
+  //   if (token) {
+  //     router.push("/");
+  //   }
+  // }, []);
+
   return (
     <form onSubmit={handleSubmit}>
       <InputText
@@ -68,6 +75,7 @@ const LoginForm = ({}) => {
       <InputText
         label="Password"
         name="password"
+        type="password"
         placeholder="*****"
         value={formValues.password}
         onChange={handleChange}

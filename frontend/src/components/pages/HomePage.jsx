@@ -75,7 +75,7 @@ const HomePage = () => {
           <Loading />
         ) : (
           <>
-            <div className="grid lg:grid-cols-3 gap-2">
+            <div className="grid lg:grid-cols-2 gap-2">
               {totalData.map((item, i) => (
                 <div key={i} className="mb-4 p-4 bg-primary/5 rounded-lg">
                   <div className="flex gap-4 mb-4">

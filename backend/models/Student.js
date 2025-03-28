@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require("uuid"); // Import UUIDv4
 const db = require("../models");
+const { ENUM } = require("sequelize");
 // gender
 
 module.exports = (sequelize, DataTypes) => {
@@ -32,11 +33,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       phone: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         validate: {
           notEmpty: true,
           isNumeric: true,
-          len: [10, 10],
+          len: [10, 15],
         },
       },
       email: {
@@ -47,6 +48,11 @@ module.exports = (sequelize, DataTypes) => {
             msg: "Email is invalid",
           },
         },
+      },
+      gender: {
+        type: DataTypes.STRING,
+        values: ENUM(["male", "female", "other"]),
+        allowNull: true,
       },
       branch_id: {
         type: DataTypes.STRING,
