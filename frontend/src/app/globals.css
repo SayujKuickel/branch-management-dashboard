@@ -20,11 +20,11 @@
 }
 
 [data-theme="light1"] {
-  --color-text: #121107;
-  --color-background: #fcfcf8;
-  --color-primary: #c8bd41;
-  --color-secondary: #e7df92;
-  --color-accent: #e4da67;
+  --color-text: #050315;
+  --color-background: #fbfbfe;
+  --color-primary: #2f27ce;
+  --color-secondary: #dedcff;
+  --color-accent: #433bff;
 }
 [data-theme="dark1"] {
   --color-text: #f8f7ed;

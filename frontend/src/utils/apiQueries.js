@@ -33,7 +33,7 @@ export const GET_ApiRequest = (
     }
   }
 
-  console.log(`\n[GET]\t`, formattedUrl, "\n");
+  // console.log(`\n[GET]\t`, formattedUrl, "\n");
 
   return axiosBaseURL.get(formattedUrl, {
     headers: getAuthHeader(),

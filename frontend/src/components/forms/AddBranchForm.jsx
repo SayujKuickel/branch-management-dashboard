@@ -21,7 +21,6 @@ const AddBranchForm = ({ editBranchId }) => {
     try {
       const res = await GET_Branch(id);
       const { branch: data } = await res.data;
-      console.log(data);
 
       setFormValues({
         name: data.name,

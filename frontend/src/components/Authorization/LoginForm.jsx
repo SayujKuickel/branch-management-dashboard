@@ -42,7 +42,6 @@ const LoginForm = ({}) => {
     if (!validateForm()) return;
 
     try {
-      console.log(formValues);
       const res = await Login(formValues);
       const { accessToken, user } = res.data;
 

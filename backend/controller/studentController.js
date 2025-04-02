@@ -8,6 +8,11 @@ exports.getAllStudents = async (req, res) => {
       whereClause.branch_id = req.query.branch_id;
     }
 
+    // handle unasigned students
+    if (req.query.unasigned === "true") {
+      whereClause.branch_id = null;
+    }
+
     const limit = parseInt(req.query.limit, 10) || 5;
     const page = parseInt(req.query.page, 10) || 0;
     const skip = page * limit;

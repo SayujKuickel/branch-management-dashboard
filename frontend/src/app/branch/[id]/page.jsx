@@ -25,7 +25,7 @@ const page = () => {
       const formattedData = data.map((item, index) => ({
         ...item,
         "sn.": index + 1,
-        options: <>btn:change btn:delete</>,
+        options: <>btn:change btn:remFrmBranch</>,
         name: `${item.first_name} ${item.last_name}`,
       }));
 

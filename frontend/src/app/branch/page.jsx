@@ -65,7 +65,7 @@ const page = () => {
 
       fetchData(page, limit);
     } catch (error) {
-      console.log("Error while deleting");
+      console.error("Error while deleting");
     }
   }
 

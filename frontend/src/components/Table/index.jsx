@@ -2,7 +2,7 @@ import { formatTableHeaders } from "@/utils/formatTableHeaders";
 
 const Table = ({ tableHeaders, data }) => {
   return (
-    <section className="w-full overflow-x-scroll relative">
+    <section className="w-full overflow-x-scroll ">
       <table className="w-full">
         <thead className="bg-accent/25">
           <tr>
