@@ -3,8 +3,12 @@
 ## Login Page 
 ![image](https://github.com/user-attachments/assets/729a388b-33a4-4842-ba8a-ab6e6fe44499)
 
+---
+
 ## Dashboard
 ![image](https://github.com/user-attachments/assets/dbaec4db-101e-47aa-ad88-331f82cf483c)
+
+---
 
 ## Students 
 ![image](https://github.com/user-attachments/assets/4633269f-97b2-41ed-8faf-9a7ae2dbf956)
@@ -35,9 +39,8 @@ Branch Details
 
 --- 
  
-Theme Switcher
+## Theme Switcher
 ![image](https://github.com/user-attachments/assets/c35412ef-3b24-4ad6-b0e0-a465bb402702)
-
 
 
 ---
