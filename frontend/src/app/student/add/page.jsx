@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 const page = () => {
   const searchParams = useSearchParams();
   const edit_id = searchParams.get("edit");
+  const mode = searchParams.get("mode");
 
   return (
     <main>
@@ -13,7 +14,7 @@ const page = () => {
           title={edit_id ? "Editing Student Details" : "Add Student"}
         />
 
-        <AddStudentForm editStudentId={edit_id} />
+        <AddStudentForm editStudentId={edit_id} mode={mode} />
       </div>
     </main>
   );

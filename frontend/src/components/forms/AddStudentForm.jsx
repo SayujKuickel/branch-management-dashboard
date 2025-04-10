@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
 import useFetchData from "@/hooks/useFetchData";
 import { useRouter } from "next/navigation";
 import { siteRoutes } from "@/utils/siteRoutes";
-import InputText from "./InputText"; // Import the InputText component
+import InputText from "./InputText";
 import { Button } from "@/components";
 
-const AddStudentForm = ({ editStudentId }) => {
+const AddStudentForm = ({ editStudentId, mode = "" }) => {
   const router = useRouter();
 
   const defaultFormValues = {
@@ -53,7 +53,6 @@ const AddStudentForm = ({ editStudentId }) => {
   const validateForm = () => {
     let newErrors = {};
 
-    // First Name validation: Ensure it is not empty and only contains alphabetic characters
     if (!formValues.first_name.trim()) {
       newErrors.first_name = "First name is required";
     } else if (!formValues.first_name.match(/^[A-Za-z]+$/)) {
@@ -61,19 +60,16 @@ const AddStudentForm = ({ editStudentId }) => {
         "First name can only contain alphabetic characters";
     }
 
-    // Last Name validation: Ensure it is not empty and only contains alphabetic characters
     if (!formValues.last_name.trim()) {
       newErrors.last_name = "Last name is required";
     } else if (!formValues.last_name.match(/^[A-Za-z]+$/)) {
       newErrors.last_name = "Last name can only contain alphabetic characters";
     }
 
-    // Email validation
     if (!formValues.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       newErrors.email = "Invalid email format";
     }
 
-    // Phone validation
     if (!formValues.phone.match(/^\d{10}$/)) {
       newErrors.phone = "Phone number must be 10 digits";
     }
@@ -97,8 +93,12 @@ const AddStudentForm = ({ editStudentId }) => {
 
       setFormValues(defaultFormValues);
 
+      if (mode === "change") {
+        return router.back();
+      }
       if (editStudentId) {
-        router.push(`/${siteRoutes.student}/add`);
+        // router.push(`/${siteRoutes.student}/add`);
+        return router.back();
       }
     } catch (error) {
       console.error("Error adding student:", error);
@@ -112,39 +112,49 @@ const AddStudentForm = ({ editStudentId }) => {
   return (
     <section className="bg-primary/5 container-small rounded-lg p-6">
       <form onSubmit={handleSubmit}>
-        <InputText
-          label="First Name"
-          name="first_name"
-          placeholder="Sayuj"
-          value={formValues.first_name}
-          onChange={handleChange}
-          error={errors.first_name}
-        />
-        <InputText
-          label="Last Name"
-          name="last_name"
-          placeholder="Kuickel"
-          value={formValues.last_name}
-          onChange={handleChange}
-          error={errors.last_name}
-        />
-        <InputText
-          label="Phone Number"
-          name="phone"
-          placeholder="9861000000"
-          value={formValues.phone}
-          onChange={handleChange}
-          error={errors.phone}
-        />
-        <InputText
-          label="Email"
-          name="email"
-          type="email"
-          placeholder="sayujk@mail.com"
-          value={formValues.email}
-          onChange={handleChange}
-          error={errors.email}
-        />
+        {mode === "change" ? (
+          <>
+            <h3 className="mb-4 font-bold text-2xl">
+              Changing Branch of: {formValues.first_name} {formValues.last_name}
+            </h3>
+          </>
+        ) : (
+          <>
+            <InputText
+              label="First Name"
+              name="first_name"
+              placeholder="Sayuj"
+              value={formValues.first_name}
+              onChange={handleChange}
+              error={errors.first_name}
+            />
+            <InputText
+              label="Last Name"
+              name="last_name"
+              placeholder="Kuickel"
+              value={formValues.last_name}
+              onChange={handleChange}
+              error={errors.last_name}
+            />
+            <InputText
+              label="Phone Number"
+              name="phone"
+              placeholder="9861000000"
+              value={formValues.phone}
+              onChange={handleChange}
+              error={errors.phone}
+            />
+            <InputText
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="sayujk@mail.com"
+              value={formValues.email}
+              onChange={handleChange}
+              error={errors.email}
+            />
+          </>
+        )}
 
         {loading ? (
           <p>Loading branches...</p>
@@ -153,7 +163,8 @@ const AddStudentForm = ({ editStudentId }) => {
         ) : (
           <div className="mb-5">
             <p className="text-xs uppercase font-bold text-text mb-1">
-              Branch (optional)
+              Branch
+              {!mode === "change" && optional}
             </p>
             <select
               name="branch_id"
@@ -163,6 +174,7 @@ const AddStudentForm = ({ editStudentId }) => {
               className={`px-4 py-3 rounded-lg border-2 border-secondary/25 bg-background w-full outline-none mb-4 accent-red`}
             >
               <option value="">Select Branch</option>
+              <option value="">No Branch</option>
               {branches.map((branch) => (
                 <option key={branch.id} value={branch.id}>
                   {branch.name}

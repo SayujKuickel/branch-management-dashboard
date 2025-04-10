@@ -50,7 +50,7 @@ const page = () => {
 
   useEffect(() => {
     if (page < 0 || limit < 0) {
-      handlePagination(0, 10);
+      fetchData(0, 10);
     } else {
       fetchData(page, limit);
     }
@@ -84,6 +84,7 @@ const page = () => {
             title="Add Branch"
             icon={"plus"}
             btnType="secondary"
+            className={"text-sm"}
           />
         </div>
 

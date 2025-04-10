@@ -67,7 +67,7 @@ const page = () => {
 
   useEffect(() => {
     if (page < 0 || limit < 0) {
-      handlePagination(0, 10);
+      fetchData(0, 10, isFetchingUnasigned);
     } else {
       fetchData(page, limit, isFetchingUnasigned);
     }

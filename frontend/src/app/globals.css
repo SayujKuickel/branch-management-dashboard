@@ -34,11 +34,11 @@
   --color-accent: #988d1b;
 }
 [data-theme="light2"] {
-  --color-text: #120a07;
-  --color-background: #fefbfa;
-  --color-primary: #cc5834;
-  --color-secondary: #e69880;
-  --color-accent: #e6714d;
+  --color-text: #0c0b0a;
+  --color-background: #f7f5f4;
+  --color-primary: #997867;
+  --color-secondary: #cbb4a8;
+  --color-accent: #bd9784;
 }
 [data-theme="dark2"] {
   --color-text: #f8f0ed;

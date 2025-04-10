@@ -29,23 +29,26 @@ const HomePage = () => {
 
         setData(stats);
 
-        const tableData = stats?.branch_data?.map((item, i) => ({
-          ...item,
-          "sn.": i + 1,
-          id: item.branch_id,
-          location: item.branch_location,
-          student_count: `${item.student_count} students`,
-          view: (
-            <>
-              <Button
-                btnType="secondary"
-                title={"View"}
-                className={"text-sm font-semibold"}
-                href={`/${siteRoutes.branch}/${item.branch_id}`}
-              />
-            </>
-          ),
-        }));
+        const tableData = stats?.branch_data
+          ?.map((item, i) => ({
+            ...item,
+            "sn.": i + 1,
+            id: item.branch_id,
+            location: item.branch_location,
+            student_count: `${item.student_count} students`,
+            view: (
+              <>
+                <Button
+                  btnType="secondary"
+                  title={"View"}
+                  className={"text-sm font-semibold"}
+                  href={`/${siteRoutes.branch}/${item.branch_id}`}
+                />
+              </>
+            ),
+          }))
+          ?.reverse();
+
         setTableData(tableData);
       } catch (error) {
         console.error("Error fetching data");
@@ -72,26 +75,28 @@ const HomePage = () => {
               unassigned={data?.unassigned}
             />
 
-            <h2 className="relative w-fit text-2xl text-text font-bold before:bg-accent before:absolute before:bottom-0 before:left-0 before:w-full before:h-1 pb-1 mb-4 mt-8">
-              Branch Data
-            </h2>
+            {!tableData || tableData.length === 0 ? null : (
+              <>
+                <MainTitle subtitle={"Top 5 Branches"} />
 
-            <div className="rounded-lg overflow-hidden">
-              <Table
-                data={tableData}
-                tableHeaders={[
-                  "sn.",
-                  "branch_name",
-                  "branch_location",
-                  "student_count",
-                  "view",
-                ]}
-              />
-            </div>
+                <div className="rounded-lg overflow-hidden">
+                  <Table
+                    data={tableData}
+                    tableHeaders={[
+                      "sn.",
+                      "branch_name",
+                      "branch_location",
+                      "student_count",
+                      "view",
+                    ]}
+                  />
+                </div>
 
-            <p className="text-xs">
-              This table only shows branch with students assigned.{" "}
-            </p>
+                <p className="text-xs">
+                  This table only shows branch with students assigned.{" "}
+                </p>
+              </>
+            )}
           </>
         )}
       </div>

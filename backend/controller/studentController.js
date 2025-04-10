@@ -67,7 +67,7 @@ exports.createStudent = async (req, res) => {
       data: student,
     });
   } catch (error) {
-    console.log(error.message);
+    console.log("[E]", error.message);
 
     res.status(500).json({
       status: "error",
@@ -82,6 +82,14 @@ exports.getStudent = async (req, res) => {
     const id = req.params.id;
 
     const data = await db.Student.findOne({ where: { id: id } });
+
+    if (!data) {
+      return res.status(200).json({
+        status: "success",
+        student: null,
+      });
+    }
+
     const branch = await db.Branch.findByPk(data.branch_id);
 
     const student = { ...data.toJSON(), branch };
@@ -93,7 +101,7 @@ exports.getStudent = async (req, res) => {
 
     if (!id) throw new Error("No ID found");
   } catch (error) {
-    console.log(error.message);
+    console.log("[E]", error.message);
 
     res.status(500).json({
       status: "error",
@@ -118,7 +126,7 @@ exports.updateStudent = async (req, res) => {
 
     res.status(200).json({ status: "success", data: student });
   } catch (error) {
-    console.log(error.message);
+    console.log("[E]", error.message);
 
     res.status(500).json({
       status: "error",
@@ -137,7 +145,7 @@ exports.deleteStudent = async (req, res) => {
 
     res.status(200).json({ status: "success", data: null });
   } catch (error) {
-    console.log(error.message);
+    console.log("[E]", error.message);
 
     res.status(500).json({
       status: "error",

@@ -17,6 +17,7 @@ import LoginForm from "./Authorization/LoginForm";
 import HomePage from "./pages/HomePage";
 import Pagination from "./navigation/Pagination";
 import HomeStatisticsSection from "./sections/HomeStatisticsSection";
+import ListItem from "./misc/ListItem";
 
 export {
   Navigation,
@@ -38,4 +39,5 @@ export {
   HomePage,
   Pagination,
   HomeStatisticsSection,
+  ListItem,
 };

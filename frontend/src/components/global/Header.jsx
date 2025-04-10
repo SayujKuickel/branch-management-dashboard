@@ -20,7 +20,7 @@ const Header = ({ onLogout }) => {
     if (confirm("Are you sure you want to log out?")) {
       sessionStorage.removeItem("access-token");
       onLogout("Logged out");
-      router.push("/login"); // Redirect to login after logging out
+      router.push("/login");
     }
   }
 
@@ -54,16 +54,18 @@ const Header = ({ onLogout }) => {
                     className={"text-sm font-semibold capitalize"}
                     href={`/${siteRoutes[item]}`}
                     title={siteRoutes[item]}
-                    btnType="secondary"
+                    btnType="tertiary"
                   />
                 </li>
               ))}
 
               <div onClick={handleLogout} className="">
                 <Button
-                  className={"text-xs text-red-500 font-semibold capitalize"}
-                  btnType="secondary"
+                  className={
+                    "text-xs py-3.5 text-red-500 font-semibold capitalize"
+                  }
                   icon={"fi fi-rr-exit"}
+                  btnType="tertiary"
                 />
               </div>
             </ul>

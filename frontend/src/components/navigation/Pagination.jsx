@@ -20,7 +20,7 @@ const Pagination = ({ page, limit }) => {
         <select
           className="border border-primary/25 bg-primary/5 hover:bg-primary/25 p-2 rounded-lg"
           value={limit}
-          onChange={(e) => handlePagination(0, e.target.value)}
+          onChange={(e) => handlePagination(0, e.target.value, router)}
         >
           <option value="5">5</option>
           <option value="10">10</option>

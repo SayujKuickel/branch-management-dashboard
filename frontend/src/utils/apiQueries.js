@@ -40,6 +40,11 @@ export const GET_ApiRequest = (
   });
 };
 
+export const PATCH_ApiRequest = (url, id, payload) => {
+  return axiosBaseURL.patch(`${url}/${id}`, payload, {
+    headers: getAuthHeader(),
+  });
+};
 //
 //
 //

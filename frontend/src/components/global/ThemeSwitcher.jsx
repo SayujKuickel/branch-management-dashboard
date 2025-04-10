@@ -11,21 +11,21 @@ const themes = [
   {
     name: "Light 2",
     value: "light2",
-    backgroundColor: "#fefbfa",
-    primary: "#e69880",
+    backgroundColor: "#f7f5f4",
+    primary: "#997867",
   },
-  {
-    name: "Dark 1",
-    value: "dark1",
-    backgroundColor: "#070703",
-    primary: "#6d6418",
-  },
-  {
-    name: "Dark 2",
-    value: "dark2",
-    backgroundColor: "#040201",
-    primary: "#803119",
-  },
+  // {
+  //   name: "Dark 1",
+  //   value: "dark1",
+  //   backgroundColor: "#070703",
+  //   primary: "#6d6418",
+  // },
+  // {
+  //   name: "Dark 2",
+  //   value: "dark2",
+  //   backgroundColor: "#040201",
+  //   primary: "#803119",
+  // },
 ];
 
 const ThemeSwitcher = () => {
