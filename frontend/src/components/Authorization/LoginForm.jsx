@@ -80,7 +80,12 @@ const LoginForm = ({}) => {
         onChange={handleChange}
         error={errors.password}
       />
-      <Button type={"submit"} icon={"plus"} title={"Login"} />
+      <Button
+        type={"submit"}
+        icon={"fi fi-rr-arrow-right-to-bracket flex"}
+        title={"Login"}
+        className="flex-row-reverse"
+      />
     </form>
   );
 };
